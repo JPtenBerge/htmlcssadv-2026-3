@@ -1,0 +1,50 @@
+/* 3 manieren om elementen te selecteren */
+element {
+} /* element 1 */
+.bla {
+} /* 10 class: reusable  "markeren als bijzonder" */
+#ding {
+} /* 100 id: uniek */
+
+/* specificity */
+
+body {
+	--mijn-var: #008000;
+
+	> header {
+		--mijn-var: purple;
+	}
+}
+
+h1,
+h2,
+h3 {
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 1rem;
+	/* background: blue; */
+}
+h1 {
+	border-left: 15px solid var(--mijn-var, red);
+}
+p {
+	margin-bottom: 0.7rem;
+}
+
+/* .hoi {
+    background: red;
+}
+#ding {
+    background: purple;
+} */
+
+article > h1 {
+	background: lightgoldenrodyellow;
+}
+article ~ div {
+	background: #0075c3;
+}
+article + div {
+	/* adjacent */
+	background: #75c3f2;
+}
