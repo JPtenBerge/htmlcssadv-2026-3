@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			img {
+				max-width: 30%;
+				float: right;
+			}
+
+			#flex-layout {
+				display: flex;
+
+				nav {
+					background: lightgreen;
+                    min-width: 120px;
+				}
+				main {
+					background: lightpink;
+					flex: 5;
+				}
+                main.tweede {
+                    background: lightskyblue;
+                    flex: 4;
+                }
+				aside {
+					background: black;
+					color: white;
+                    max-width: 50px;
+				}
+			}
+
+			#flex-blokjes {
+				background: purple;
+				padding: 0.5rem;
+				display: flex;
+				flex-wrap: wrap;
+				/* flex-direction: column; */
+				justify-content: space-between;
+				height: 200px;
+				div {
+					background: orange;
+					margin: 5px;
+					padding: 1rem;
+				}
+			}
+
+			#blokjes {
+				background: red;
+				padding: 0.5rem;
+				div {
+					background: orange;
+					margin: 5px;
+					padding: 1rem;
+					float: left;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="flex-layout">
+			<nav>
+				<ol>
+					<li><a href="/start">Start</a></li>
+					<li><a href="/portfolio">Portfolio</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ol>
+			</nav>
+			<main>
+				<h1>Content</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dignissimos tempora corporis enim molestias unde quod dolorem sit laboriosam! Praesentium nobis aperiam laborum ut veritatis perferendis quam cupiditate quasi quaerat?</p>
+                <p>Blanditiis nemo porro voluptatibus voluptas facilis ea mollitia, animi unde, amet sint alias temporibus? Corporis sunt neque dolor quas et placeat expedita eum delectus perferendis, temporibus aut adipisci deserunt beatae.</p>
+                <p>Corrupti fugiat animi maxime dicta debitis dolore, autem perferendis! Nostrum nam id commodi exercitationem corporis alias voluptate odio ea, at animi vitae rem quasi illo doloribus modi! Illo, odit praesentium.</p>
+			</main>
+            <main class="tweede">
+				<h1>Content</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dignissimos tempora corporis enim molestias unde quod dolorem sit laboriosam! Praesentium nobis aperiam laborum ut veritatis perferendis quam cupiditate quasi quaerat?</p>
+                <p>Blanditiis nemo porro voluptatibus voluptas facilis ea mollitia, animi unde, amet sint alias temporibus? Corporis sunt neque dolor quas et placeat expedita eum delectus perferendis, temporibus aut adipisci deserunt beatae.</p>
+                <p>Corrupti fugiat animi maxime dicta debitis dolore, autem perferendis! Nostrum nam id commodi exercitationem corporis alias voluptate odio ea, at animi vitae rem quasi illo doloribus modi! Illo, odit praesentium.</p>
+			</main>
+			<aside>boring shizzle</aside>
+		</div>
+
+		<div id="flex-blokjes">
+			<div>1</div>
+			<div>
+				2
+				<br />
+				b
+			</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+
+		<hr />
+
+		<div id="blokjes">
+			<div>1</div>
+			<div>
+				2
+				<br />
+				b
+			</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<br style="clear: left" />
+		</div>
+
+		<br />
+		<img src="https://i1.sndcdn.com/avatars-l1naSpQtTriIecnJ-Rf6eyQ-t1080x1080.jpg" />
+		<p>
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, porro officiis, dolorem atque nobis recusandae
+			doloremque architecto, autem distinctio illo voluptas repellendus vel nemo reprehenderit deleniti dolore dolores.
+			Laboriosam, quis!
+		</p>
+		<p>
+			Officia, dicta libero, exercitationem reprehenderit odio ab numquam cumque ipsam explicabo eveniet dignissimos
+			mollitia ad at. Est itaque, ab nisi eveniet nam deleniti, sint magnam neque incidunt, repudiandae provident aut!
+		</p>
+		<p>
+			Nostrum aliquid consectetur quod, consequatur exercitationem quam aspernatur animi nisi maiores voluptatum delectus
+			ipsum obcaecati fuga ea, cum, eum minus similique corporis reiciendis quidem eaque culpa nesciunt dolores.
+			Repellendus, quidem!
+		</p>
+		<p>
+			Esse tempore, iure, quisquam, cupiditate sunt architecto minima omnis nobis qui officiis repudiandae laborum dicta
+			atque velit illo voluptatibus quidem sed. Ea eius aliquam molestiae explicabo perferendis exercitationem sequi
+			praesentium.
+		</p>
+		<p>
+			Ad delectus dolorem laboriosam animi distinctio rerum nesciunt, ipsum, omnis nobis assumenda iste aut, eaque
+			voluptatibus eius odio. Velit natus laborum, iusto beatae totam ea qui inventore explicabo earum odit?
+		</p>
+	</body>
+</html>

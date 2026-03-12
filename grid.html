@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Beste webapp aller tijden</title>
+		<link rel="stylesheet" href="reset.css" />
+		<style>
+			body {
+                height: 100vh;
+				display: grid;
+				grid-template:
+					'header header header' 60px
+					'nav main ads' 1fr
+					'footer footer footer' 40px / 130px 1fr 80px;
+
+				/* grid-template-columns: 120px 1fr 100px;
+                grid-template-rows: 100px 1fr 40px; */
+			}
+
+			body > header {
+				grid-area: header;
+				background: lightpink;
+			}
+			nav {
+				background: lightgreen;
+				grid-area: nav;
+			}
+			main {
+				background: lightblue;
+				grid-area: main;
+			}
+			aside {
+				background: lightslategray;
+				grid-area: ads;
+			}
+			body > footer {
+				grid-area: footer;
+				background: lightseagreen;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<h1>Logo met slogan</h1>
+		</header>
+
+		<nav>
+			<ol>
+				<li><a href="/start">Start</a></li>
+				<li><a href="/portfolio">Portfolio</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ol>
+		</nav>
+
+		<main>
+			<!-- ook een article -->
+			<header>
+				<h1 class="hoi" id="ding">Awesome content</h1>
+				<h3>Subkop</h3>
+			</header>
+			<!-- <p>huh <a href="...">hallo</p>hoi</a> -->
+
+			<!-- <textarea /> -->
+
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, est?</p>
+			<p>Ex ipsum architecto dicta fugiat quisquam rerum autem ullam minus!</p>
+
+			<footer>Deze auteur is zeer bekend en betrouwbaar want ervaring.</footer>
+		</main>
+
+		<aside>advertenties en andere zaken</aside>
+
+		<footer>&copy; JP 2026 | Privacygeneuzel | Contactgevens | Disclaimer | Ik woon hier</footer>
+	</body>
+</html>

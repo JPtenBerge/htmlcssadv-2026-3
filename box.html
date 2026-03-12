@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+/* body {
+    background: lightblue;
+} */
+
+            * {
+                box-sizing: border-box;
+            }
+
+
+			span {
+				background: yellow;
+				padding: 1rem;
+				border: 3px dotted purple;
+                display: inline-block;
+			}
+
+            nav ol {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                a {
+                    background: green;
+                    color: white;
+                    margin: 10px;
+                    padding: 1rem;
+                    display: block;
+                }
+            }
+
+
+            #container {
+                background: purple;
+                padding: 1rem;
+            }
+            #inner {
+                background: pink;
+                width: 100%;
+                /* width: calc(100% - 2rem); */
+                padding: 1rem;
+                /* margin: 1rem; */
+            }
+
+			/* inline block */
+		</style>
+	</head>
+	<body>
+		<!-- inline element: om in een alinea tekst te gebruiken -  -->
+		<!-- a button img span b u i strong em -->
+		<p>hallo hoe gaat het <span>hier span</span> ja hier goed ja hier goed goed ja hier goed goed ja hier goed goed ja hier goed goed ja hier goed </p>
+
+		<!-- block element - pakken standaard zoveel mogelijk breedte -->
+		<!-- div article main section header footer p ol ul blockquote -->
+        <div id="container">
+            <div id="inner">hier div</div>
+
+        </div>
+
+
+        <nav>
+            <ol>
+                <li><a href="/start">Start</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ol>
+        </nav>
+	</body>
+</html>
