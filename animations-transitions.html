@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="reset.css" />
+		<style>
+			nav ol {
+				display: flex;
+				gap: 0.5rem;
+				margin: 2rem;
+			}
+			a {
+				background: lightblue;
+				transition: 4s ease all;
+				display: block;
+
+				&:hover {
+					background: #0075c3;
+					color: white;
+					/* transform: scale(2) rotate(5deg) translateX(2000px) translateY(-1000px); */
+					/* margin-left: 200px; */
+					/* hardware acceleration */
+				}
+			}
+
+			@keyframes blinky {
+				0% {
+					font-size: 100%;
+					color: black;
+					opacity: 0;
+				}
+				30% {
+					color: blue;
+				}
+				100% {
+					color: red;
+					font-size: 300%;
+					opacity: 1;
+				}
+			}
+			blink {
+				animation: blinky 100ms infinite alternate;
+			}
+
+			@view-transition {
+				navigation: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ol>
+				<li><a href="/">Start</a></li>
+				<li><a href="/animations-transitions.html">Anim/transition</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ol>
+		</nav>
+
+		<blink>hier de blinkert</blink>
+
+		<p>
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati reprehenderit facere, rerum voluptatibus officiis
+			nesciunt ullam eos quisquam tempora odit consequatur est saepe similique eum dolore omnis illum harum ad.
+		</p>
+		<p>
+			Voluptatibus, earum ex quod tenetur quia repellat delectus, provident iure adipisci dolorum amet praesentium sapiente!
+			Amet ducimus porro sunt qui id et quo vitae ab molestiae. Id esse repudiandae maxime.
+		</p>
+		<p>
+			Repudiandae enim id, officia amet eius cum est iure rerum sequi beatae voluptatem consequatur saepe perspiciatis,
+			necessitatibus optio mollitia sint voluptas suscipit! Praesentium perferendis eius accusantium, impedit alias
+			assumenda aliquid?
+		</p>
+	</body>
+</html>

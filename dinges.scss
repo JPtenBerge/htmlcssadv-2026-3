@@ -1,0 +1,11 @@
+
+
+$base-color1: #75c3f2;
+
+nav a {
+    background: $base-color1;
+
+    &:hover {
+        background: darken($base-color1, 20%);
+    }
+}

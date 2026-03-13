@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			/* media queries */
+			@media (max-width: 700px) {
+				#container {
+					background: lightblue;
+				}
+			}
+			@media (min-width: 96em) {
+				#container {
+					background: lightgreen;
+				}
+			}
+			@media (orientation: landscape) {
+			}
+			@media (prefers-reduced-motion: reduce) {
+				* {
+					animation: none !important;
+				}
+			}
+            @media (prefers-color-scheme: dark) {
+
+            }
+
+			.px {
+				/* font-size: 16pt; */
+				font-size: 16px; /* a11y. zo min mogelijk/niet gebruiken voor font sizes. */
+			}
+			.em {
+				font-size: 0.8em; /* relatief tov parent element */
+			}
+			.rem {
+				font-size: 1rem; /* relatief tov de browserinstelling */
+			}
+			.vw {
+				font-size: 3vw;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">hier de container</div>
+
+		<p class="px">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, magnam?</p>
+		<p class="em">Doloribus, quaerat inventore. Nisi accusamus quasi error dolorem incidunt! Dolor!</p>
+		<p class="rem">Dolorum, veritatis esse? Voluptatem, provident? Atque accusantium voluptatibus blanditiis nesciunt!</p>
+		<p class="vw">Pariatur fuga nisi suscipit hic! Eum doloribus illum obcaecati perferendis.</p>
+
+		<ul class="em">
+			<li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, libero!</li>
+			<li>Saepe laborum dolores consequuntur numquam atque molestiae voluptatem illo obcaecati.</li>
+			<li>
+				Optio eos provident neque libero exercitationem quas enim ullam sint?
+				<ul class="em">
+					<li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, libero!</li>
+					<li>Saepe laborum dolores consequuntur numquam atque molestiae voluptatem illo obcaecati.</li>
+					<li>
+						Optio eos provident neque libero exercitationem quas enim ullam sint?
+						<ul class="em">
+							<li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, libero!</li>
+							<li>Saepe laborum dolores consequuntur numquam atque molestiae voluptatem illo obcaecati.</li>
+							<li>Optio eos provident neque libero exercitationem quas enim ullam sint?</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

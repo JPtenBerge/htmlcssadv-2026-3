@@ -11,6 +11,31 @@
 		<script src="bla.js" defer></script>
 		<link rel="stylesheet" href="reset.css" />
 		<link rel="stylesheet" href="default.css" />
+		<link rel="stylesheet" href="dinges.css" />
+		<style>
+			nav ol {
+				display: flex;
+				gap: 0.5rem;
+				margin: 2rem;
+			}
+			a {
+				background: lightblue;
+				transition: 4s ease all;
+				display: block;
+
+				&:hover {
+					background: #0075c3;
+					color: white;
+					/* transform: scale(2) rotate(5deg) translateX(2000px) translateY(-1000px); */
+					/* margin-left: 200px; */
+					/* hardware acceleration */
+				}
+			}
+
+			@view-transition {
+				navigation: auto;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -21,8 +46,8 @@
 
 			<nav>
 				<ol>
-					<li><a href="/start">Start</a></li>
-					<li><a href="/portfolio">Portfolio</a></li>
+					<li><a href="/">Start</a></li>
+					<li><a href="/animations-transitions.html">Anim/transition</a></li>
 					<li><a href="/contact">Contact</a></li>
 				</ol>
 			</nav>
@@ -48,9 +73,9 @@
 			<article>
 				<h1>Embedded content</h1>
 
-                <div>
-                    <h1>Nog een h1 binnen div</h1>
-                </div>
+				<div>
+					<h1>Nog een h1 binnen div</h1>
+				</div>
 
 				<!-- <video src="media/video1.webm" controls autoplay muted></video>
 				<audio src="media/audio1.mp3"></audio> -->
@@ -65,12 +90,12 @@
 
 				<!-- <svg></svg> -->
 			</article>
-            <div>hier een div!</div>
-            <div>hier een div2!</div>
-            <div>hier een div3!</div>
-            <div>hier een div4!</div>
-            <div>hier een div5!</div>
-            <div>hier een div6!</div>
+			<div>hier een div!</div>
+			<div>hier een div2!</div>
+			<div>hier een div3!</div>
+			<div>hier een div4!</div>
+			<div>hier een div5!</div>
+			<div>hier een div6!</div>
 
 			<article>
 				<h1>Awesome elementen</h1>
