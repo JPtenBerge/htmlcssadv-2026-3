@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>El Poll</title>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<script>
+			const socket = new WebSocket('http://localhost:3000');
+			socket.addEventListener('open', () => console.log('yay open'));
+			socket.addEventListener('close', () => console.log('oh nee gesloten'));
+			socket.addEventListener('message', e => {
+				let message = JSON.parse(e.data);
+
+				if (message.action === 'init') {
+					initPoll(message.poll);
+				} else if (message.action === 'vote') {
+					processVote(message.optionNr);
+				}
+			});
+
+			function initPoll(poll) {
+				document.querySelector('#active-poll h2').innerText = poll.statement;
+				document.querySelector('#active-poll li:nth-child(1) .description').innerText = poll.option1;
+				document.querySelector('#active-poll li:nth-child(2) .description').innerText = poll.option2;
+				document.querySelector('#active-poll li:nth-child(3) .description').innerText = poll.option3;
+				document.querySelector('#active-poll li:nth-child(4) .description').innerText = poll.option4;
+
+				document.querySelector('#active-poll').classList.remove('hidden');
+			}
+
+			let totalNrOfVotes = 0;
+			let votes = { 1: 0, 2: 0, 3: 0, 4: 0 };
+			function processVote(optionNr) {
+				totalNrOfVotes++;
+                votes[optionNr]++;
+                
+                let maxWidth = 100;
+
+                for (let i = 1; i <= 4; i++) {
+                    let percentage = votes[i] / totalNrOfVotes * 100;
+
+                    document.querySelector(`#active-poll li:nth-child(${i}) .bar`).style.width = `${percentage}px`;
+                }
+			}
+
+			function vote(optionNr) {
+				socket.send(JSON.stringify({ action: 'vote', optionNr }));
+			}
+
+			function deployPoll() {
+				let poll = {
+					statement: document.querySelector('#input-statement').value,
+					option1: document.querySelector('#input-option1').value,
+					option2: document.querySelector('#input-option2').value,
+					option3: document.querySelector('#input-option3').value,
+					option4: document.querySelector('#input-option4').value,
+				};
+
+				socket.send(JSON.stringify({ action: 'init', poll }));
+			}
+		</script>
+	</head>
+	<body>
+		<h1 class="font-bold text-3xl">El Poll</h1>
+
+		<div id="active-poll" class="hidden">
+			<h2 class="font-bold text2xl">(stelling)</h2>
+
+			<ol>
+				<li onclick="vote(1)" class="flex items-center gap-2">
+					<span class="description"></span>
+					<div class="bar h-3 bg-sky-400"></div>
+					<span class="votes"></span>
+				</li>
+				<li onclick="vote(2)" class="flex items-center gap-2">
+					<span class="description"></span>
+					<div class="bar h-3 bg-sky-400"></div>
+					<span class="votes"></span>
+				</li>
+				<li onclick="vote(3)" class="flex items-center gap-2">
+					<span class="description"></span>
+					<div class="bar h-3 bg-sky-400"></div>
+					<span class="votes"></span>
+				</li>
+				<li onclick="vote(4)" class="flex items-center gap-2">
+					<span class="description"></span>
+					<div class="bar h-3 bg-sky-400"></div>
+					<span class="votes"></span>
+				</li>
+			</ol>
+			<hr />
+		</div>
+		<form
+			onsubmit="
+				deployPoll();
+				return false;
+			"
+		>
+			<ol>
+				<li>
+					<label>Stelling:</label>
+					<input class="border" id="input-statement" />
+				</li>
+				<li>
+					<label>Optie #1:</label>
+					<input class="border" id="input-option1" />
+				</li>
+				<li>
+					<label>Optie #2:</label>
+					<input class="border" id="input-option2" />
+				</li>
+				<li>
+					<label>Optie #3:</label>
+					<input class="border" id="input-option3" />
+				</li>
+				<li>
+					<label>Optie #4:</label>
+					<input class="border" id="input-option4" />
+				</li>
+				<li>
+					<button class="border bg-slate-300 hover:cursor-pointer outline-none p-2">Deploy</button>
+				</li>
+			</ol>
+		</form>
+	</body>
+</html>
